@@ -4,6 +4,13 @@
 	Open WSL
 	source py314_venv/scripts/activate to activate VENV
 	Can use python3 to open python interpreter (basically like a live python script)
+	
+
+[Using git]
+	git status - check if there are any changes
+	git add . - stage any changes
+	git commit -m "Description of change" - commit changes and add comment
+	git push - pushes changes to GitHub repo
 
 
 [Functions]
