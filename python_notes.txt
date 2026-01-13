@@ -1,0 +1,131 @@
+<Python Notes>
+
+[Using VENV]
+	Open WSL
+	source py314_venv/scripts/activate to activate VENV
+	Can use python3 to open python interpreter (basically like a live python script)
+
+
+[Functions]
+	input() - Prompt for user input
+	print() - print text or variable
+	dir() - find out what methods a variable offers (i.e. string supports .upper(), .split(), etc.)
+	help(var.method) - shows how to use a method
+	len(list) - check the length of a list
+	list(range(n)) - generate a list of n numbers starting from 0
+	var in list - to check if given variable is in a list. returns true/false
+
+
+[Embedding variable in string]
+	Use f string and put your variable in {}
+	f"This is a string with a variable: {my_var}"
+	Use r string for raw string
+	r"c:\users\tyler\documents"
+
+
+[Indentation]
+	Colon (:) indicates an indented code block
+	Indentation always starts with four spaces
+
+
+[File Operations]
+	f = open("show_version.txt")
+	data = f.read()
+	f.close()
+
+	open("filename.txt") - open a file; "r" mode for read (default), "w" mode for write, "a" mode for append
+	.read() - read the entire file as a string
+	.readline() - read one line at a time
+	.readlines() - read all of the lines of the file into a list
+	.seek(int) - jump to a specific line; line 0 for beginning of file
+	.write("Text") - write to a file
+	.flush() - push write changes to a file
+	.close() - close file when done
+
+
+[Context Managers]
+	with open("filename.txt", mode = "r") as f:
+		data = f.read()
+
+	with - keyword to use context manager
+
+
+[Generator Example]
+	def gen(n):
+		i = 0
+		while i < n:
+			yield i
+			i += 1
+	OR
+	my_generator = (for x in range(n))
+
+
+[Lists, Sets, and Dictionaries]
+	Lists use [] and are ordered with indices. You can have any combination of different types of variables
+	list.append("value") to add a value to the end of a list
+
+	Sets use {} and are unordered groups of variables. You can not have duplicates in a set. Sets are immutable
+	set.add("value") to add a variable to a set
+	set.update("set2") to combine two sets
+	set.remove("value") to remove a variable from a set (use .discard() to remove without generating an exception)
+	"set1 | set2" to union two sets together. This doesn't change them but returns the combined set with no duplicates
+	"set1 & set2" to retrieve the intersection of the two sets
+	"set1 ^ set2" to retrieve all values that are not contained in both sets
+
+	Dictionaries use {} with key:value pairs
+	my_dict = {
+	"rtr_1": "10.1.100.1",
+	"rtr_2": "10.2.100.1",
+	"rtr_3": "10.3.100.1"}
+	my_dict["rtr_3"] to retrieve a value. You can also use .get()
+	my_dict["rtr_3"] = "10.3.100.2" to reassign value
+	.print() to print out all key:value pairs
+	Printing over dictionary in for loop returns the keys. Use my_dict.values() in your loop to get values when printing
+	.items() in your for loop to get both key and value when printing
+	.pop() to remove key and return value (can assign to a variable)
+	.update() method to combine dictionaries
+
+
+[Exception Handling]
+	Use try: except blocks to handle exceptions
+	You can assign your exception to a variable ("except as e:") so that you can reference it
+	Use the raise keyword to raise the exception again (if you still want your program to crash)
+	Use the try: except finally block to include code that will occur whether there is an exception or
+	not. Typically cleanup operations
+	
+	
+[Regular Expression]
+	import re - import the regular expression library
+	re.search(pattern, data) - search for the specified string in the given dataset. returns boolean if present or not
+	Prefix your string with 'r' to make it a raw string. Turns off python special characters (\n, \t, etc.)
+	re.findall(pattern, data) to find multiple occurences of your pattern, instead of just matching the first one
+	re.escape(data) function to escape all special characters (converts all of them to literal characters with a \)
+	.group(0) - determine what string was matched for
+	.groupdict() to get a dictionary of your names capture groups and their values
+	.group(name) to get value of specified named capture group (instead of using .group(0), .group(1), etc.)
+	
+	Flags
+	flags=re.MULTILINE (or re.M) to the end of your re.search to make each line get its own ^ and $
+	flags=re.DOTALL (or re.D) to make the . special character include \n
+	
+	Regex key:
+	. any single character
+	.* any character repeated zero or more times
+	.+ any character repeated one or more times
+	.? any character repeated zero or one times
+	\s whitespace character class
+	\S non-whitespace character class
+	\w any word character (a-z, A-Z, 0-9, _)
+	\d any digit character
+	() for creating a capture group that can be referenced. Include ?P<name> at the beginning of your group to name it
+	(|) logical OR
+	^ beginning of line
+	$ end of line
+	\ escape sequence
+	[] constructing custom class
+	*? convert to non-greedy
+	+? convert to non-greedy
+	
+	Examples
+	IP Address pattern: (\d+\.\d+\.\d+\.\d+) OR ([\d\.]+)
+	MAC Address pattern: (\w+\.\w+\.\w+) OR ([\w+\.]+)
