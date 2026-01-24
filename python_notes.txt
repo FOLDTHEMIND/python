@@ -1,5 +1,11 @@
 <Python Notes>
 
+EX2300 Information:
+192.168.86.49
+pyclass
+Pyclass2025!
+
+
 [Using VENV]
 	Open WSL
 	source py314_venv/scripts/activate to activate VENV
@@ -7,6 +13,7 @@
 	
 
 [Using git]
+	Need to be in repo folder (c:\users\tyler\VENV\)
 	git status - check if there are any changes
 	git add . - stage any changes
 	git commit -m "Description of change" - commit changes and add comment
@@ -136,3 +143,22 @@
 	Examples
 	IP Address pattern: (\d+\.\d+\.\d+\.\d+) OR ([\d\.]+)
 	MAC Address pattern: (\w+\.\w+\.\w+) OR ([\w+\.]+)
+	
+	
+[Functions]
+	Positional arguments:
+	def my_function(arg1, arg2):
+		some_code
+		return some_output
+	Named arguments:
+	def my_function(arg2=something, arg1=else):
+		some code
+		return some_output
+	Functions follow LEGB when figuring out a variables value (Local, Enclosed, Global, Built-in)
+	Prefix a list with * to pass a list's values to each argument (instead of passing the entire list to the first argument)
+	Prefix a dictionary with ** to pass in the dictionary as key-value pairs (keys must match parameter names)
+	Define your function with *args to allow any number of positional arguments. Creates a tuple with all args
+	You can use **kwargs to accept a dictionary with any number of key-value pairs
+	Lambda function format "lambda x: x**2"
+	Think about it like "lambda (x): return x**2"
+	Bind it to a variable "my_func = lambda x,y: x**y"
