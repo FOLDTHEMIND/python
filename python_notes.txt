@@ -162,3 +162,17 @@ Pyclass2025!
 	Lambda function format "lambda x: x**2"
 	Think about it like "lambda (x): return x**2"
 	Bind it to a variable "my_func = lambda x,y: x**y"
+	
+	
+[Classes and Objects]
+	A class is a blueprint for creating an object
+	Define your class and its functions with the following syntax:
+	class ClassName:
+		def function1(self, parameter1, parameter2):
+			code
+		def function2(self, parameter):
+			code
+			
+	Define the __init__ function to initialize your object and its parameters
+	Static methods are used when you're creating a method that doesn't need to use the self parameter.
+	Use the @staticmethod decorator to create one
