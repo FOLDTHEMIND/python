@@ -176,3 +176,37 @@ Pyclass2025!
 	Define the __init__ function to initialize your object and its parameters
 	Static methods are used when you're creating a method that doesn't need to use the self parameter.
 	Use the @staticmethod decorator to create one
+	
+	
+[Data Classes]
+	Allows you to create a Class boilerplate in simple form
+	Use @dataclass tag. Need to import (from dataclasses import dataclass)
+	Attributes with default values must be specified last
+	Comes with __repr__ automatically (this is the same thing as __str__)
+	@dataclass
+	class NetDevice:
+		device_type: str
+		host: str
+		username: str
+		password: str
+		version: str = "v1.0"
+		
+
+[Class Attributes]
+	Attributes that are shared by all instances of the class
+	Refer to the attribute using Class.Attribute (TelnetConn.conns in below example)
+	class TelnetConn:
+		conns = 0
+			
+			
+[Inheritance & Super]
+		Classes can inherit methods and attributes from parent classes. All classes inherit from the default object class
+		class ConnectionClass:
+			some code
+		
+		class SSHConnection(ConnectionClass):
+			some code
+		Use super(). to call a method from the parent class (i.e. super().__init__(attribute1, attribute2, etc.) to 
+		call the parent dunder init method. Useful for augmenting dunder init for a child class
+		Use super().__init__(*args, **kwargs) to allow for changes in the parent class
+		
