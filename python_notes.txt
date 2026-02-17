@@ -6,11 +6,12 @@ pyclass
 Pyclass2025!
 
 
-[Using VENV]
+[Virtual Environments]
 	Open WSL
 	source py314_venv/scripts/activate to activate VENV
 	Can use python3 to open python interpreter (basically like a live python script)
-	
+	Create Python VENV:
+	python3.12 -m venv venv_name
 
 [Using git]
 	Need to be in repo folder (c:\users\tyler\VENV\)
@@ -210,3 +211,7 @@ Pyclass2025!
 		call the parent dunder init method. Useful for augmenting dunder init for a child class
 		Use super().__init__(*args, **kwargs) to allow for changes in the parent class
 		
+		
+[Libraries and Python Path]
+		To add a directory to your sys.path, use $PYTHONPATH.
+		export PYTHONPATH=/directory/to/add
