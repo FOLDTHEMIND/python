@@ -215,3 +215,13 @@ Pyclass2025!
 [Libraries and Python Path]
 		To add a directory to your sys.path, use $PYTHONPATH.
 		export PYTHONPATH=/directory/to/add
+		
+
+[Best Practices]
+	Best practice is to seperate your reusable things (functions, classes, etc.) from main code
+	if __name__ == "__main__":
+	code
+	Follow this order: Constants, Functions, Classes, [seperater], Main code
+	Optional: include your main code in a function named main() and then just call that function
+	Modules are usually python files that only contain reusable elements for you to import elsewhere
+	Packages are directories containing multiple modules. __init__.py is a special file that automatically gets loaded from importing a package
